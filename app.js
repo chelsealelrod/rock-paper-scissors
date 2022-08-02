@@ -3,7 +3,7 @@ let compScore = 0;
 const userScore_span = document.getElementById("user-score");
 const compScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_p = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
@@ -31,6 +31,7 @@ const winner = (userChoice, compChoice) => {
 };
 
 const loser = (userChoice, compChoice) => {
+    compScore++;
     userScore++;
     userScore_span.innerHTML = userScore;
     compScore_span.innerHTML = compScore;
@@ -42,7 +43,7 @@ const loser = (userChoice, compChoice) => {
 const draw = (userChoice, compChoice) => {
     const smallUserWord = "user".fontsize(3);
     const smallCompWord = "comp".fontsize(3);
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(compChoice)}${smallCompWord}`;
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} "it's a draw" ${convertToWord(compChoice)}${smallCompWord}`;
 };
 
 
