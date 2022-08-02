@@ -34,8 +34,10 @@
 }
 
 .result {
+    text-align: center;
     font-size: 40px;
     color: white;
+    font-family: Asap, sans-serif;
 }
 
 .result > p {
